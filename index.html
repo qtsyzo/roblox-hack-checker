@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Roblox Account Safety Checker</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="card">
+      <h1>Roblox Account Safety Checker</h1>
+      <p class="muted">
+        This site <b>does not</b> ask for your password, cookie, or 2-step codes.
+        It helps you spot signs of compromise and secure your account.
+      </p>
+      <div class="pill-row">
+        <span class="pill ok">No password collection</span>
+        <span class="pill ok">No cookie collection</span>
+        <span class="pill warn">Heuristic only</span>
+      </div>
+    </header>
+
+    <section class="card">
+      <h2>Quick Public Lookup (optional)</h2>
+      <p class="muted">
+        Enter a username to fetch basic <b>public</b> info. This does not prove hacking — it just helps confirm you’re looking at the right account.
+      </p>
+
+      <div class="row">
+        <input id="username" placeholder="Roblox username (public)" autocomplete="off" />
+        <button id="lookupBtn">Lookup</button>
+      </div>
+
+      <div id="lookupNote" class="note warn hidden"></div>
+      <pre id="lookupOut" class="pre hidden"></pre>
+
+      <p class="muted small">
+        ⚠️ Browser-to-Roblox API requests are often blocked by CORS. If lookup fails, the self-check below still works.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Self-Check (best indicator)</h2>
+      <p class="muted">Answer honestly. You’ll get a risk score and the exact next steps.</p>
+
+      <div class="checklist" id="checklist"></div>
+
+      <div class="row">
+        <button id="scoreBtn" class="primary">Calculate Risk</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+
+      <div id="result" class="result hidden"></div>
+    </section>
+
+    <section class="card">
+      <h2>What to do if you think you’re hacked</h2>
+      <ol class="steps">
+        <li><b>Change your Roblox password</b> (and your email password too).</li>
+        <li><b>Log out of all other sessions</b> (Security settings).</li>
+        <li><b>Enable 2-Step Verification</b> and generate recovery/backup codes.</li>
+        <li><b>Contact Roblox Support</b> if email/password were changed or you can’t log in.</li>
+      </ol>
+
+      <div class="links">
+        <a class="link" href="https://en.help.roblox.com/hc/en-us/articles/203313390-My-account-was-hacked-What-do-I-do" target="_blank" rel="noreferrer">Roblox: “My account was hacked — what do I do?”</a>
+        <a class="link" href="https://en.help.roblox.com/hc/en-us/articles/203313380-Keep-Your-Account-Safe" target="_blank" rel="noreferrer">Roblox: Keep Your Account Safe</a>
+        <a class="link" href="https://en.help.roblox.com/hc/en-us/articles/212459863-Add-2-Step-Verification-to-Your-Account" target="_blank" rel="noreferrer">Roblox: Add 2-Step Verification</a>
+      </div>
+      <p class="muted small">Those steps are based on Roblox’s official guidance. :contentReference[oaicite:1]{index=1}</p>
+    </section>
+
+    <footer class="muted small center">
+      Built as a safety tool. Don’t paste passwords, cookies, or 2FA codes anywhere.
+    </footer>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
